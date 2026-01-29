@@ -1,19 +1,19 @@
 classDiagram
 direction LR
 
-class Catalogo1 {
+class Profesor {
   +int IdCatalogo1
   +string Nombre
   +bool Activo
 }
 
-class Catalogo2 {
+class Estudiante {
   +int IdCatalogo2
   +string Nombre
   +bool Activo
 }
 
-class Relacion {
+class Curso {
   +int IdRelacion
   +int IdCatalogo1_FK
   +int IdCatalogo2_FK
@@ -28,6 +28,6 @@ class Extra {
   +bool Activo
 }
 
-Catalogo1 "1" --> "0..*" Relacion : FK
-Catalogo2 "1" --> "0..*" Relacion : FK
-Extra "1" --> "0..*" Catalogo2 : participa
+Profesor "1" --> "0..*" Curso : FK
+Estudiante "1" --> "0..*" Curso : FK
+Extra "1" --> "0..*" Estudiante : participa
