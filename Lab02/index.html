@@ -18,12 +18,17 @@
             margin: 4px 2px;
             cursor: pointer;
         }
+        .styled {
+            background-color: #f0f8ff;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
 
     </style>
 </head>
 
 <body>
-    <button class="btn"> Antes / Despues</button>
+    <button class="btn" onclick="activarEstilos()"> on Antes / Despues</button>
     <h1>Lab 02</h1>
     <p>Este es el primer laboratorio de la asignatura.</p>
     <p>En este laboratorio, aprenderemos los conceptos básicos de HTML y CSS.</p>
@@ -86,6 +91,12 @@
 
 
     <p>Para más información, visita el sitio web oficial.</p>
+        <script>
+        function activarEstilos() {
+            document.body.classList.toggle('styled');
+        }
+    </script>
+ 
 </body>
 
 </html>
