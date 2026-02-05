@@ -1,0 +1,40 @@
+classDiagram
+direction LR
+
+class TipoTrabajo {
+    +int IdTipo_Trabajo
+    +string Nombre
+    +string Descripcion
+    +bool Activo
+}
+
+class GuiaCanino {
+    +int IdGuiaCanino
+    +string Nombre
+    +string Rango
+    +bool Activo
+}
+
+class Can {
+    +int IdCan
+    +int IdTipo_Trabajo
+    +string Nombre
+    +string Raza
+    +date FechaNacimiento
+    +bool Activo
+}
+
+class AsignacionTarea {
+    +int IdAsignacion
+    +int IdGuiaCanino
+    +int IdCan
+    +int IdCan_FK
+    +date FechaTrabajo
+    +string Estado
+}
+
+
+
+TipoTrabajo "1" --> "0..*" Can : FK
+GuiaCanino "1" --> "0..*" AsignacionTarea : FK
+Can "1" --> "0..*" AsignacionTarea : FK
