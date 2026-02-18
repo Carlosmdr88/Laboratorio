@@ -14,7 +14,6 @@
       font-weight: bold;
     }
 
-
     .form-input {
       width: 100%;
       padding: 10px 0;
@@ -50,6 +49,8 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
       width: 100%; 
       max-width: 400px;
+      margin: 20px auto; 
+
     }
 
 
@@ -70,4 +71,23 @@ nav ul li {
 nav ul li a {
   color: white;
   text-decoration: none;
+}
+h1 {
+  text-align: center;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  margin-top: 1em;
+}
+p {
+  text-align: center;
+  color: #555;
+  font-family: 'Arial', sans-serif;
+  margin: 0 auto;
+  max-width: 600px;
+}
+label {
+  margin-left: 5px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
 }
