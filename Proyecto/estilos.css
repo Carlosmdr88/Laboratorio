@@ -43,6 +43,16 @@
       margin-top: 1em;
       margin-bottom: 0.2em;
     }
+    
+    .container { background: white; 
+      padding: 30px; 
+      border-radius: 8px; 
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+      width: 100%; 
+      max-width: 400px;
+    }
+
+
 nav ul {
   list-style-type: none;
   padding: 0;
