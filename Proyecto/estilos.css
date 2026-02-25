@@ -108,3 +108,26 @@ h2 {
   font-family: 'Arial', sans-serif;
   margin-top: 1em;
 }
+
+footer , header {
+  text-align: center;
+  padding: 20px;
+  background-color: #eeecec;
+  margin-top: 20px;
+}
+
+/* Estilos para el contenedor de login */
+.contenedor-login{
+    width:300px;
+    margin:30px auto;
+    padding:20px;
+    background:white;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.contenedor-login input{
+    width:100%;
+    padding:6px;
+    margin-bottom:10px;
+}
