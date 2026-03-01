@@ -12,6 +12,7 @@ class GuiaCanino {
     +int IdGuiaCanino
     +string Nombre
     +string Rango
+    +int tareasRealizadas
     +bool Activo
 }
 
@@ -21,6 +22,7 @@ class Can {
     +string Nombre
     +string Raza
     +date FechaNacimiento
+    +int tareasRealizadas
     +bool Activo
 }
 
@@ -33,6 +35,10 @@ class AsignacionTarea {
     +string Estado
 }
 
+class login {
+    +string Usuario
+    +string Contraseña
+}
 
 
 TipoTrabajo "1" --> "0..*" Can : FK
