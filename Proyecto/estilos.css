@@ -138,6 +138,10 @@ footer , header {
     padding:6px;
     margin-bottom:10px;
 }
+
+/*--------------------------------------------------------------- */
+/* Estilos para la página de asignación de tareas */  
+/*--------------------------------------------------------------- */
 .container-asignacion {
   background: rgb(254, 250, 250); 
   padding: 30px; 
@@ -158,7 +162,7 @@ footer , header {
 
 }
 /*--------------------------------------------------------------- */
-/* Estilos para la página de tareas */
+/* Estilos para la página de  tareas */
 /* -------------------------------------------------------------- */
 .container-tareas {
   background: rgb(254, 250, 250); 
