@@ -17,21 +17,23 @@
       <div class="card">
         <div class="field">
           <input type="text" id="txtSearch" placeholder="Buscar estudiante por nombre" />
-          <button id="btnLoad" class="btn btn-primary" type="button">Consultar</button>
 
+          <button id="btnLoad" class="btn btn-primary" type="button">Consultar</button>
           <button id="btnClear" class="btn btn-secondary" type="button">Limpiar</button>
         </div>
       </div>
+
       <!-- tabla -->
       <div class="card">
         <table id="tblEstudiantes">
           <thead>
             <tr>
-              <th>ID</th>
+              <!-- <th>ID</th> -->
               <th>Nombre</th>
               <th>Apellido</th>
               <th>Correo</th>
               <th>Carrera</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody id="tbodyStudents"></tbody>
@@ -41,4 +43,3 @@
     <script src="./app.js" type="module"></script>
   </body>
 </html>
- 
