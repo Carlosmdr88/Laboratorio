@@ -185,3 +185,25 @@ tbody tr:nth-child(even) {
   font-weight: 800;
   font-size: 12px;
 }
+
+.btnEliminar {
+  padding: 5px 8px;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--accent2);
+  border-color: var(--accent2);
+}
+
+.btnActualizar {
+  padding: 5px 8px;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.field.buttons {
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 8px;
+}
