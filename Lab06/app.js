@@ -18,6 +18,7 @@ const txtNombre = document.getElementById("txtNombre");
 const txtApellido = document.getElementById("txtApellido");
 const txtCorreo = document.getElementById("txtCorreo");
 const txtCarrera = document.getElementById("txtCarrera");
+const txtFechaNacimiento = document.getElementById("txtFechaNacimiento"); 
 // Tabla
 const tbody = document.getElementById("tbodyStudents");
 const tituloForm = document.getElementById("tituloForm");
@@ -57,7 +58,7 @@ tbody.addEventListener("click", async (event) => {
   const id = target.getAttribute("data-id");
 
   // 1. Consultar el estudiante por su id
-  const { data, error } = await supabase.from("estudiantes").select("id,nombre,apellido,correo,carrera").eq("id", id).single();
+  const { data, error } = await supabase.from("estudiantes").select("id,nombre,apellido,correo,carrera,fecha_nacimiento").eq("id", id).single();
 
   if (error) {
     console.error(error);
@@ -70,6 +71,7 @@ tbody.addEventListener("click", async (event) => {
   txtApellido.value = data.apellido;
   txtCorreo.value = data.correo;
   txtCarrera.value = data.carrera;
+  txtFechaNacimiento.value = data.fecha_nacimiento;
   // 3. Cambiar el botón de agregar a actualizar
   btnAdd.textContent = "Actualizar";
   tituloForm.textContent = "Editar Estudiante";
@@ -97,7 +99,7 @@ const consultarEstudiantes = async () => {
   // usamos el cliente de Supabase para hacer una consulta a la tabla "estudiantes"
   // json: { "data": [], "error": null }
   const search = txtSearch.value.trim() || ""; // si el valor es vacío, se asigna una cadena vacía
-  const query = supabase.from("estudiantes").select("id,nombre,apellido,correo,carrera");
+  const query = supabase.from("estudiantes").select("id,nombre,apellido,correo,carrera,fecha_nacimiento");
 
   // filtros
   if (search.length > 0) {
@@ -125,6 +127,7 @@ const consultarEstudiantes = async () => {
         <td>${r.apellido ?? ""}</td>
         <td>${r.correo ?? ""}</td>
         <td>${r.carrera ?? ""}</td>
+        <td>${r.fecha_nacimiento ?? ""}</td>
         <td>
           <button class="btnEditar" data-id="${r.id}">Editar</button>
           <button class="btnEliminar" data-id="${r.id}">Eliminar</button>
@@ -141,9 +144,10 @@ const guardarEstudiante = async () => {
     apellido: txtApellido.value.trim(),
     correo: txtCorreo.value.trim(),
     carrera: txtCarrera.value.trim(),
+    fecha_nacimiento: txtFechaNacimiento.value
   };
 
-  if (!estudiante.nombre || !estudiante.apellido || !estudiante.correo || !estudiante.carrera) {
+  if (!estudiante.nombre || !estudiante.apellido || !estudiante.correo || !estudiante.carrera || !estudiante.fecha_nacimiento) {
     alert("Por favor, complete todos los campos");
     return;
   }
@@ -191,6 +195,7 @@ const limpiarFormulario = () => {
   txtApellido.value = "";
   txtCorreo.value = "";
   txtCarrera.value = "";
+  txtFechaNacimiento.value = "";
   btnAdd.textContent = "Agregar";
   tituloForm.textContent = "Agregar Estudiantes";
 };
