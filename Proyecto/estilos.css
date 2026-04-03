@@ -1,4 +1,50 @@
+/*---------------------------------------------------------------- */
+/* Estilos para la página de login */
+/*--------------------------------------------------------------- */
+.contenedor-login{
+    width:300px;
+    margin:30px auto;
+    padding:20px;
+    background:white;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
 
+.contenedor-login input{
+    width:100%;
+    padding:6px;
+    margin-bottom:10px;
+}
+.container-h1 {
+  border-radius: 16px;
+  padding: 18px;
+  background: var(--bg);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .16);
+  border: 2px solid var(--accent);
+}
+
+.h1-login {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 6px 0 0;
+}
+
+.h2-login {
+  font-size: 14px;
+  opacity: .92;
+  margin: 6px 0 0;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------------------------- */
+/* ACOMODAR */
+/*--------------------------------------------------------------- */
     body{
       background-color: rgb(177, 249, 181);
     }
@@ -121,23 +167,6 @@ footer , header {
   background-color: #eeecec;
   margin-top: 20px;
 }
-/*---------------------------------------------------------------- */
-/* Estilos para la página de login */
-/*--------------------------------------------------------------- */
-.contenedor-login{
-    width:300px;
-    margin:30px auto;
-    padding:20px;
-    background:white;
-    border:1px solid #ccc;
-    border-radius:8px;
-}
-
-.contenedor-login input{
-    width:100%;
-    padding:6px;
-    margin-bottom:10px;
-}
 
 /*--------------------------------------------------------------- */
 /* Estilos para la página de asignación de tareas */  
@@ -161,6 +190,7 @@ footer , header {
   background-color: rgb(56, 56, 254);
 
 }
+
 /*--------------------------------------------------------------- */
 /* Estilos para la página de  tareas */
 /* -------------------------------------------------------------- */
