@@ -4,113 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
+
     <title>Tareas Programadas</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-      <!-- encabezado de cuerpo de la pagina-->
-  <header>
+
+<header>
     <h1 id="main-title" class="title">Programacion de Tareas</h1>
     <h2 class="title">Unidad Canina </h2>
-  </header>
+</header>
 
-  <!-- menu -->
-  <nav class="nav menu">
+<!-- menú -->
+<nav class="nav menu">
     <ul class="nav-list">
-      <li class="menu-item"><a href="inicio.html">Inicio</a></li>
-      <li class="menu-item"><a href="asignar.html">Asignar Tarea</a></li>
-      <li class="menu-item"><a href="tareas.html">Tareas Programadas</a></li>
-      <li class="menu-item"><a href="estadistica.html">Estadisticas</a></li>
-      <li class="menu-item"><a href="login.html">Cerrar Sesion</a></li>
+        <li class="menu-item"><a href="inicio.html">Inicio</a></li>
+        <li class="menu-item"><a href="asignar.html">Asignar Tarea</a></li>
+        <li class="menu-item"><a href="tareas.html">Tareas Programadas</a></li>
+        <li class="menu-item"><a href="estadistica.html">Estadisticas</a></li>
+        <li class="menu-item"><a href="login.html">Cerrar Sesion</a></li>
     </ul>
-  </nav>
+</nav>
 
-    <h1>Seccion de Tareas Programadas</h1>
+    <h1>Sección de Tareas Programadas</h1>
 
     <p>
-        En esta seccion se podran visualizar las tareas que se han programado para los Oficiales y Canes, ademas de esto se podran editar o eliminar las tareas programadas.
-    </p>  
+        Aquí podrás visualizar las tareas asignadas a los guías y canes,  además de iniciar, actualizar o finalizar cada tarea.
+    </p>
 
-<div class="container-tareas">
+    <div class="container-tareas">
+        
+        <table class="table table-bordered table-striped text-center align-middle">
+            <thead class="table-primary">
+                <tr>
+                    <th>N° de tarea</th>
+                    <th>Guía</th>
+                    <th>Can</th>
+                    <th>Tipo de trabajo</th>
+                    <th>Fecha</th>
+                    <th>Comentario</th>
+                    <th>Estado</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
 
-<table class="table table-bordered table-striped text-center align-middle">
-    <thead class="table-primary">
-        <tr>
-            <th>N° de tarea</th>
-            <th>Guía</th>
-            <th>Can</th>
-            <th>Tipo de revisión</th>
-            <th>Fecha</th>
-            <th>Comentario</th>
-            <th>Estado</th>
-            <th>Acción</th>
-        </tr>
-    </thead>
+            
+            <tbody id="tablaTareas">
+                
+            </tbody>
 
-    <tbody>
-        <tr>
-            <td></td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td><input type="text" class="form-control" placeholder="Comentario"></td>
-            <td><span class="badge bg-primary">En ejecución</span></td>
-            <td><button class="btn btn-success btn-sm">Actualizar tarea</button></td>
-        </tr>
+        </table>
+    </div>
 
-        <tr>
-            <td></td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td><input type="text" class="form-control" placeholder="Comentario"></td>
-            <td><span class="badge bg-primary">En ejecución</span></td>
-            <td><button class="btn btn-success btn-sm">Actualizar tarea</button></td>
-        </tr>
 
-        <tr>
-            <td>--</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td><input type="text" class="form-control" placeholder="Comentario"></td>
-            <td><span class="badge bg-primary">En ejecución</span></td>
-            <td><button class="btn btn-success btn-sm">Actualizar tarea</button></td>
-        </tr>
 
-        <tr>
-            <td></td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td><input type="text" class="form-control" placeholder="Comentario"></td>
-            <td><span class="badge bg-primary">En ejecución</span></td>
-            <td><button class="btn btn-success btn-sm">Actualizar tarea</button></td>
-        </tr>
+<footer class="text-center mt-4">
+    <p>&copy; 2026 Plataforma de Asignación de Tareas</p>
+    <p>Contacto: <a href="mailto:carlos.degado@uc.ac.cr">Carlos M Delgado R</a></p>
+</footer>
 
-        <tr>
-            <td></td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td>—</td>
-            <td><input type="text" class="form-control" placeholder="Comentario"></td>
-            <td><span class="badge bg-primary">En ejecución</span></td>
-            <td><button class="btn btn-success btn-sm">Actualizar tarea</button></td>
-        </tr>
-    </tbody>
+<script type="module" src="./tareas.js"></script>
 
-</table>
-</div>
-
-       <footer>
-<p>&copy; 2026 Plataforma de Asignación de Tareas</p>
-<p>Contacto: <a href="mailto:carlos.degado@uc.ac.cr">Carlos M Degado R</a></p>
-</footer>  
 </body>
 </html>
