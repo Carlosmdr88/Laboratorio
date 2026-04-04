@@ -70,3 +70,18 @@ function guardarAsignacion() {
         }
     });
 }
+
+/*/-------------------------------------------------------------------------/*/
+/*/ LIMPIAR FORMULARIO/*/
+/*/-------------------------------------------------------------------------/*/
+const btnCancel = document.getElementById("btnCancel");
+
+btnCancel.addEventListener("click", async () => limpiarFormulario());
+
+const limpiarFormulario = () => {
+  fecha.value = "";
+  direccion.value = "";
+  contacto.value = "";
+  observaciones.value = "";
+
+};
