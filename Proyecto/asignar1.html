@@ -9,6 +9,8 @@
 
 <body>
 
+
+
   <header>
     <h1 id="main-title" class="title">Asiganacion de Tareas</h1>
     <h2 class="title">Unidad Canina </h2>
@@ -32,52 +34,46 @@
         las tareas, ademas de esto se tendra un formulario en el cual se podran ingresar los datos de la tarea.
     </p>
     <div class="container-asignacion">
-  <form id="formAsignacion">
+    <form action="">
+        <Label>Tipo de Trabajo:</Label>
+        <div class="form-group">
+            <input type="text" placeholder="Trabajo" class="form-input">
+        </div>
+        <Label>Selecione el Guia:</Label>
+        <div class="form-group">
+            <input type="number" placeholder="Guia" class="form-input">
+        </div>
 
-<label>Tipo de Trabajo:</label>
-<div class="form-group">
-    <select id="tipotrabajo" class="form-input"></select>
-</div>
+        <Label>Selecione el Can:</Label>
+        <div class="form-group">
+            <input type="number" placeholder="Can" class="form-input">
+        </div>
+        <label>Fecha:</label>
+        <div class="form-group">
+            <input type="date" placeholder="Fecha" class="form-input">
+        </div>
+        <Label>Direccion:</Label>
+        <div class="form-group">
+            <input type="text" placeholder="Dirección del lugar" class="form-input">
+        </div>
+        <Label>Contacto :</Label>
+        <div class="form-group">
+            <input type="number" placeholder="Nombre y numero del contacto" class="form-input">
+        </div>
+        <Label>Observaciones:</Label>
+        <div class="form-group">
+            <input type="text" placeholder="Observaciones" class="form-input">
+        </div>
+            <button type="submit" class="submit-button">Asignar</button>
 
-<label>Seleccione el Guia:</label>
-<div class="form-group">
-    <select id="guia" class="form-input"></select>
-</div>
-
-<label>Seleccione el Can:</label>
-<div class="form-group">
-    <select id="can" class="form-input"></select>
-</div>
-
-<label>Fecha:</label>
-<div class="form-group">
-    <input type="date" id="fecha" class="form-input">
-</div>
-
-<label>Direccion:</label>
-<div class="form-group">
-    <input type="text" id="direccion" class="form-input">
-</div>
-
-<label>Contacto :</label>
-<div class="form-group">
-    <input type="text" id="contacto" class="form-input">
-</div>
-
-<label>Observaciones:</label>
-<div class="form-group">
-    <input type="text" id="observaciones" class="form-input">
-</div>
-
-<button type="submit" class="submit-button">Asignar</button>
-
-</form>
+        </div>
+    
+    </form>
     </div>
 </div>
    <footer>
 <p>&copy; 2026 Plataforma de Asignación de Tareas</p>
 <p>Contacto: <a href="mailto:carlos.degado@uc.ac.cr">Carlos M Degado R</a></p>
 </footer>
-<script type="module" src="./asignar.js"></script>
 </body>
 </html>
