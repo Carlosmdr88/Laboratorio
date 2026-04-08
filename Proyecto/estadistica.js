@@ -6,13 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function cargarEstadisticas() {
 
-    // 🔹 Traer datos con relaciones
     const { data, error } = await supabase
         .from("asignaciontarea")
         .select(`
             estado,
-            idguiacanino (idguiacanino, nombre),
-            idcan (idcan, nombre)
+            guiacanino (idguiacanino, nombre),
+            can (idcan, nombre)
         `);
 
     if (error) {
@@ -20,7 +19,6 @@ async function cargarEstadisticas() {
         return;
     }
 
-    // 🔹 OBJETOS PARA AGRUPAR
     const estadisticasCan = {};
     const estadisticasGuia = {};
 
@@ -55,10 +53,10 @@ async function cargarEstadisticas() {
         }
 
         // =====================
-        // 👨‍✈️ GUÍA
+        // 👨‍✈️ GUIA
         // =====================
-        const idGuia = t.GuiaCanino?.idguiacanino;
-        const nombreGuia = t.GuiaCanino?.nombre;
+        const idGuia = t.guiacanino?.idguiacanino;
+        const nombreGuia = t.guiacanino?.nombre;
 
         if (idGuia) {
 
@@ -82,7 +80,9 @@ async function cargarEstadisticas() {
 
     });
 
-    // 🔹 LLENAR TABLA CANES
+    // =====================
+    // 📊 TABLA CANES
+    // =====================
     const tablaCanes = document.getElementById("tablaCanes");
     tablaCanes.innerHTML = "";
 
@@ -103,7 +103,9 @@ async function cargarEstadisticas() {
         `;
     });
 
-    // 🔹 LLENAR TABLA GUÍAS
+    // =====================
+    // 📊 TABLA GUIAS
+    // =====================
     const tablaGuias = document.getElementById("tablaGuias");
     tablaGuias.innerHTML = "";
 

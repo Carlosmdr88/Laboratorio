@@ -5,14 +5,26 @@ document.addEventListener("DOMContentLoaded", () => {
     cargarCanes();
 });
 
+// =====================
+// 👨‍✈️ GUIAS
+// =====================
 
 async function cargarGuias() {
 
-    const { data } = await supabase.from("guiacanino").select("*");
+    const { data, error } = await supabase
+        .from("guiacanino")
+        .select("*");
+
+    if (error) {
+        console.log(error);
+        return;
+    }
+
     const select = document.getElementById("selectGuia");
+    select.innerHTML = `<option value="">Seleccione</option>`;
 
     data.forEach(g => {
-        select.innerHTML += `<option value="${g.IdGuiaCanino}">${g.Nombre}</option>`;
+        select.innerHTML += `<option value="${g.idguiacanino}">${g.nombre}</option>`;
     });
 
     select.addEventListener("change", mostrarGuia);
@@ -21,6 +33,7 @@ async function cargarGuias() {
 async function mostrarGuia() {
 
     const id = document.getElementById("selectGuia").value;
+    if (!id) return;
 
     const { data: guia } = await supabase
         .from("guiacanino")
@@ -39,16 +52,26 @@ async function mostrarGuia() {
 }
 
 
+// =====================
+// 🐕 CANES
+// =====================
+
 async function cargarCanes() {
 
-    const { data } = await supabase
-        .from("Can")
-        .select(`*, TipoTrabajo (Nombre)`);
+    const { data, error } = await supabase
+        .from("can")
+        .select("*");
+
+    if (error) {
+        console.log(error);
+        return;
+    }
 
     const select = document.getElementById("selectCan");
+    select.innerHTML = `<option value="">Seleccione</option>`;
 
     data.forEach(c => {
-        select.innerHTML += `<option value="${c.IdCan}">${c.Nombre}</option>`;
+        select.innerHTML += `<option value="${c.idcan}">${c.nombre}</option>`;
     });
 
     select.addEventListener("change", mostrarCan);
@@ -57,21 +80,22 @@ async function cargarCanes() {
 async function mostrarCan() {
 
     const id = document.getElementById("selectCan").value;
+    if (!id) return;
 
     const { data: can } = await supabase
-        .from("Can")
-        .select(`*, TipoTrabajo (Nombre)`)
-        .eq("IdCan", id)
+        .from("can")
+        .select("*")
+        .eq("idcan", id)
         .single();
 
     const { data: tareas } = await supabase
-        .from("AsignacionTarea")
+        .from("asignaciontarea")
         .select("*")
-        .eq("IdCan", id);
+        .eq("idcan", id);
 
-    document.getElementById("cNombre").textContent = can.Nombre;
-    document.getElementById("cRaza").textContent = can.Raza;
-    document.getElementById("cTipo").textContent = can.TipoTrabajo?.Nombre || "";
-    document.getElementById("cFecha").textContent = can.FechaNacimiento;
+    document.getElementById("cNombre").textContent = can.nombre;
+    document.getElementById("cRaza").textContent = can.raza;
+    document.getElementById("cTipo").textContent = can.idtipo_trabajo;
+    document.getElementById("cFecha").textContent = can.fechanacimiento;
     document.getElementById("cTareas").textContent = tareas.length;
 }
