@@ -6,7 +6,6 @@
 
 <title>Estadísticas</title>
 
-
 <link rel="stylesheet" href="estilos.css">
 </head>
 
@@ -29,46 +28,37 @@
            
         </ul>
     </nav>
+    <div class="contenedorGRANDE">
+        <div class="cardguiacan">
+            <h4>Estadísticas del Guía</h4>
 
-    <div class="container mt-4">
+            <select id="selectGuia"></select>
 
-        <div class="row">
-
-
-            <div class="col-md-6">
-                <div class="card">
-
-                <h4>Estadísticas del Guía</h4>
-
-                <select id="selectGuia" class="form-control mb-3"></select>
-
-                <p><strong>Nombre:</strong> <span id="gNombre"></span></p>
-                <p><strong>Rango:</strong> <span id="gRango"></span></p>
-                <p><strong>Tareas realizadas:</strong> <span id="gTareas"></span></p>
-
-            </div>
+            <p><strong>Nombre:</strong> <span id="gNombre"></span></p>
+            <p><strong>Rango:</strong> <span id="gRango"></span></p>
+            <p><strong>Tareas realizadas:</strong> <span id="gTareas"></span></p>
         </div>
 
+    
+        <div class="cardguiacan">
+            <h4>Estadísticas del Can</h4>
 
-        <div class="col-md-6">
-            <div class="card p-3">
+            <select id="selectCan"></select>
 
-                <h4>Estadísticas del Can</h4>
-
-                <select id="selectCan" class="form-control mb-3"></select>
-
-                <p><strong>Nombre:</strong> <span id="cNombre"></span></p>
-                <p><strong>Raza:</strong> <span id="cRaza"></span></p>
-                <p><strong>Tipo trabajo:</strong> <span id="cTipo"></span></p>
-                <p><strong>Fecha nacimiento:</strong> <span id="cFecha"></span></p>
-                <p><strong>Tareas realizadas:</strong> <span id="cTareas"></span></p>
-
-            </div>
+            <p><strong>Nombre:</strong> <span id="cNombre"></span></p>
+            <p><strong>Raza:</strong> <span id="cRaza"></span></p>
+            <p><strong>Tipo trabajo:</strong> <span id="cTipo"></span></p>
+            <p><strong>Fecha nacimiento:</strong> <span id="cFecha"></span></p>
+            <p><strong>Tareas realizadas:</strong> <span id="cTareas"></span></p>
         </div>
     </div>
+
+    <footer class="text-center mt-4">
+        <p>&copy; 2026 Plataforma de Asignación de Tareas</p>
+        <p>Contacto: <a href="mailto:carlos.degado@uc.ac.cr">Carlos M Delgado R</a></p>
+    </footer>
+    <script type="module" src="ver_guia_can.js"></script>
 </div>
-
-<script type="module" src="ver_guia_can.js"></script>
-
+</body>
 </body>
 </html>

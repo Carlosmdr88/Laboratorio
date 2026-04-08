@@ -315,3 +315,23 @@ select.form-control {
     border-radius: 20px;
     backdrop-filter: blur(10px);
 }
+
+/*---------------------------------------------------------------VER GUIA Y CAN  */
+
+
+/* Contenedor principal */
+.contenedorGRANDE {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* Cada tarjeta */
+.cardguiacan {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
