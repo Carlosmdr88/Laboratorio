@@ -26,9 +26,9 @@ async function cargarEstadisticas() {
 
         const estado = t.estado;
 
-        // =====================
-        // 🐕 CAN
-        // =====================
+        // ===============================================================
+        // DATOS CAN
+    
         const idCan = t.can?.idcan;
         const nombreCan = t.can?.nombre;
 
@@ -52,9 +52,9 @@ async function cargarEstadisticas() {
             }
         }
 
-        // =====================
-        // 👨‍✈️ GUIA
-        // =====================
+        // ==========================================
+        //  GUIA
+   
         const idGuia = t.guiacanino?.idguiacanino;
         const nombreGuia = t.guiacanino?.nombre;
 
@@ -80,9 +80,9 @@ async function cargarEstadisticas() {
 
     });
 
-    // =====================
-    // 📊 TABLA CANES
-    // =====================
+    // ==========================================
+    //  TABLA CANES
+
     const tablaCanes = document.getElementById("tablaCanes");
     tablaCanes.innerHTML = "";
 
@@ -103,9 +103,9 @@ async function cargarEstadisticas() {
         `;
     });
 
-    // =====================
-    // 📊 TABLA GUIAS
-    // =====================
+    // ==========================================
+    //  TABLA GUIAS
+    
     const tablaGuias = document.getElementById("tablaGuias");
     tablaGuias.innerHTML = "";
 

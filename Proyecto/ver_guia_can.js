@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
     cargarCanes();
 });
 
-// =====================
-// 👨‍✈️ GUIAS
-// =====================
+// ==========================================
+//  GUIAS
+
 
 async function cargarGuias() {
 
@@ -52,9 +52,9 @@ async function mostrarGuia() {
 }
 
 
-// =====================
-// 🐕 CANES
-// =====================
+// ==========================================
+// CANES
+
 
 async function cargarCanes() {
 
