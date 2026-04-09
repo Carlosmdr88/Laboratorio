@@ -14,6 +14,8 @@ async function cargarDatos() {
     // 🔹 Tipo de Trabajo
     const { data: tipos } = await supabase.from("tipotrabajo").select("*");
     const selectTipo = document.getElementById("tipotrabajo");
+    selectTipo.innerHTML = `<option value="" disabled selected>Seleccione</option>`;
+    // 
 
     tipos.forEach(t => {
         selectTipo.innerHTML += `<option value="${t.idtipo_trabajo}">${t.nombre}</option>`;
@@ -22,6 +24,7 @@ async function cargarDatos() {
     // 🔹 Guías
     const { data: guias } = await supabase.from("guiacanino").select("*");
     const selectGuia = document.getElementById("guia");
+    selectGuia.innerHTML = `<option value="" disabled selected>Seleccione</option>`;
 
     guias.forEach(g => {
         selectGuia.innerHTML += `<option value="${g.idguiacanino}">${g.nombre}</option>`;
@@ -30,6 +33,8 @@ async function cargarDatos() {
     // 🔹 Canes
     const { data: canes } = await supabase.from("can").select("*");
     const selectCan = document.getElementById("can");
+    selectCan.innerHTML = `<option value="" disabled selected>Seleccione</option>`;
+    
 
     canes.forEach(c => {
         selectCan.innerHTML += `<option value="${c.idcan}">${c.nombre}</option>`;

@@ -15,7 +15,7 @@ async function cargarTareas() {
             estado,
             idguiacanino (nombre),
             idcan (nombre),
-            idtipotrabajo (nombre) 
+            idtipotrabajo (nombre)
         `); /*/REVISAR QUE EL AUTOCOMPLETAR NO DEJE UNA COMA AL  FINAL YA QUE GENERA ERRORES EN LA CONSULTA/*/
 
     if (error) {
