@@ -1,64 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Estadísticas</title>
+    <title>Estadísticas</title>
 
-<link rel="stylesheet" href="estilos.css">
-</head>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
 
-<body>
-<div class="container">
-    <header>
+  <body>
+    <div class="container">
+      <header>
         <h1 id="main-title" class="title">Estadisticas de Tareas</h1>
-        <h2 class="title">Unidad Canina </h2>
-    </header>
+        <h2 class="title">Unidad Canina</h2>
+      </header>
 
-
-    <nav class="nav menu">
+      <nav class="nav menu">
         <ul class="nav-list">
-            <li class="menu-item"><a href="inicio.html">Inicio</a></li>
-            <li class="menu-item"><a href="asignar.html">Asignar Tarea</a></li>
-            <li class="menu-item"><a href="tareas.html">Tareas Programadas</a></li>
-            <li class="menu-item"><a href="estadistica.html">Estadisticas</a></li>
-            <li class="menu-item"><a href="ver_guia_can.html">Ver Guía y Can</a></li>
-            <li class="menu-item"><a href="login.html">Cerrar Sesion</a></li>
-           
+          <li class="menu-item"><a href="inicio.html">Inicio</a></li>
+          <li class="menu-item"><a href="asignar.html">Asignar Tarea</a></li>
+          <li class="menu-item">
+            <a href="tareas.html">Tareas Programadas</a>
+          </li>
+          <li class="menu-item"><a href="estadistica.html">Estadisticas</a></li>
+          <li class="menu-item">
+            <a href="ver_guia_can.html">Ver Guía y Can</a>
+          </li>
+          <li class="menu-item"><a href="login.html">Cerrar Sesion</a></li>
         </ul>
-    </nav>
-    <div class="contenedorGRANDE">
+      </nav>
+      <div class="contenedorGRANDE">
         <div class="cardguiacan">
-            <h4>Estadísticas del Guía</h4>
+          <h4>Estadísticas del Guía</h4>
 
-            <select id="selectGuia"></select>
+          <select id="selectGuia"></select>
 
-            <p><strong>Nombre:</strong> <span id="gNombre"></span></p>
-            <p><strong>Rango:</strong> <span id="gRango"></span></p>
-            <p><strong>Tareas realizadas:</strong> <span id="gTareas"></span></p>
+          <p><strong>Nombre:</strong> <span id="gNombre"></span></p>
+          <p><strong>Rango:</strong> <span id="gRango"></span></p>
+          <p><strong>Tareas realizadas:</strong> <span id="gTareas"></span></p>
         </div>
 
-    
         <div class="cardguiacan">
-            <h4>Estadísticas del Can</h4>
+          <h4>Estadísticas del Can</h4>
 
-            <select id="selectCan"></select>
+          <select id="selectCan"></select>
 
-            <p><strong>Nombre:</strong> <span id="cNombre"></span></p>
-            <p><strong>Raza:</strong> <span id="cRaza"></span></p>
-            <p><strong>Tipo trabajo:</strong> <span id="cTipo"></span></p>
-            <p><strong>Fecha nacimiento:</strong> <span id="cFecha"></span></p>
-            <p><strong>Tareas realizadas:</strong> <span id="cTareas"></span></p>
+          <p><strong>Nombre:</strong> <span id="cNombre"></span></p>
+          <p><strong>Raza:</strong> <span id="cRaza"></span></p>
+          <p><strong>Tipo trabajo:</strong> <span id="cTipo"></span></p>
+          <p><strong>Fecha nacimiento:</strong> <span id="cFecha"></span></p>
+          <p><strong>Tareas realizadas:</strong> <span id="cTareas"></span></p>
         </div>
-    </div>
+      </div>
 
-    <footer class="text-center mt-4">
+      <footer class="text-center mt-4">
         <p>&copy; 2026 Plataforma de Asignación de Tareas</p>
-        <p>Contacto: <a href="mailto:carlos.degado@uc.ac.cr">Carlos M Delgado R</a></p>
-    </footer>
-    <script type="module" src="ver_guia_can.js"></script>
-</div>
-</body>
-</body>
+        <p>
+          Contacto:
+          <a href="mailto:carlos.degado@uc.ac.cr">Carlos M Delgado R</a>
+        </p>
+      </footer>
+      <script type="module" src="ver_guia_can.js"></script>
+    </div>
+  </body>
 </html>
