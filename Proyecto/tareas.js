@@ -28,8 +28,20 @@ async function cargarTareas() {
 
     data.forEach(tarea => {
 
+        let claseEstado = "";
+
+    if (tarea.estado === "Pendiente") {
+    claseEstado = "table-warning";
+    } else if (tarea.estado === "En ejecución") {
+    claseEstado = "table-success";
+    } else if (tarea.estado === "Finalizada") {
+    claseEstado = "table-danger";
+    }
+
+        
+
         const fila = `
-        <tr class="${tarea.estado === 'En ejecución' ? 'fila-activa' : ''}">
+        <tr class="${claseEstado}">
             <td>${tarea.idasignacion}</td>
             <td>${tarea.idguiacanino?.nombre || ''}</td>
             <td>${tarea.idcan?.nombre || ''}</td>
@@ -44,9 +56,9 @@ async function cargarTareas() {
             <td>${tarea.estado}</td>
 
             <td>
-                <button onclick="iniciar(${tarea.idasignacion})">INICIAR</button>
-                <button onclick="finalizar(${tarea.idasignacion})">FINALIZAR</button>
-                <button onclick="actualizar(${tarea.idasignacion})">ACTUALIZAR</button>
+                <button class="btn btn-success btn-sm" onclick="iniciar(${tarea.idasignacion})">Iniciar</button>
+                <button class="btn btn-danger btn-sm" onclick="finalizar(${tarea.idasignacion})">Finalizar</button>
+                <button class="btn btn-warning btn-sm" onclick="actualizar(${tarea.idasignacion})">Actualizar</button>
             </td>
         </tr>
         `;
