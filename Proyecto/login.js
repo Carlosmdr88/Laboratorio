@@ -11,10 +11,10 @@ window.login = async (event) => {
         password
     });
 
-    // 🚨 SI HAY ERROR → NO ENTRA
+
     if (error) {
         alert("Correo o contraseña incorrectos");
-        return; // 🔥 ESTO ES CLAVE
+        return; 
     }
     alert("Bienvenido 🚀");
 
