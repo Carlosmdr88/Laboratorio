@@ -1,12 +1,12 @@
         .fondo {
-            background-image: url("imagenes/imagen.png");
+            background-image: url("../imagenes/imagen.png");
             background-size: cover;        /* Ajusta la imagen a toda la pantalla */
             background-repeat: no-repeat;  /* Evita que se repita */
             background-position: center;   /* Centra la imagen */
         }
 
                 .fondo1 {
-            background-image: url("imagenes/imagen2.png");
+            background-image: url("../imagenes/imagen2.png");
             background-size: cover;        /* Ajusta la imagen a toda la pantalla */
             background-repeat: no-repeat;  /* Evita que se repita */
             background-position: center;   /* Centra la imagen */
