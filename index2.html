@@ -7,6 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <title>Captura de Identidad Móvil</title>
+    <!-- Tailwind CSS para diseño moderno y ultra-responsivo -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,9 +50,11 @@
   <body
     class="text-slate-100 flex justify-center items-center min-h-screen p-0 sm:p-4"
   >
+    <!-- CONTENEDOR DEL TELÉFONO -->
     <div
       class="w-full max-w-md h-screen sm:h-[840px] bg-slate-900 sm:rounded-[40px] sm:border-[10px] sm:border-slate-800 shadow-2xl flex flex-col justify-between overflow-hidden relative"
     >
+      <!-- BARRA SUPERIOR / ESTILO NATIVO -->
       <div
         class="bg-slate-950 text-[11px] px-6 pt-3 pb-2 flex justify-between items-center font-mono text-slate-400 select-none z-30 shrink-0"
       >
@@ -59,6 +62,7 @@
         <div
           class="w-24 h-4 bg-slate-900 rounded-full mx-auto hidden sm:block"
         ></div>
+        <!-- Botón de acceso rápido a la cola de espera -->
         <button
           id="nav-queue-btn"
           onclick="goToScreen('screen-queue')"
@@ -74,14 +78,15 @@
         </button>
       </div>
 
+      <!-- NOTIFICACIÓN / ALERTA FLOTANTE -->
       <div
         id="toast-notification"
-        class="absolute top-12 left-4 right-4 bg-red-500/95 text-white p-3.5 rounded-2xl shadow-xl flex items-center gap-3 transition-all duration-300 transform -translate-y-24 opacity-0 z-50"
+        class="absolute top-12 left-4 right-4 bg-red-500/95 text-white p-3.5 rounded-2xl shadow-xl flex items-center gap-3 transition-all duration-300 transform -translate-y-24 opacity-0 z-50 animate-pulse"
       >
         <div class="bg-white/20 p-2 rounded-xl text-lg">
           <i id="toast-icon" class="fa-solid fa-circle-exclamation"></i>
         </div>
-        <div>
+        <div class="flex-grow">
           <p
             id="toast-title"
             class="font-bold text-xs uppercase tracking-wider"
@@ -92,11 +97,13 @@
         </div>
       </div>
 
+      <!-- PANTALLA 1: FORMULARIO DE CAPTURA -->
       <div
         id="screen-capture"
         class="flex-grow flex flex-col overflow-y-auto no-scrollbar p-6 justify-between"
       >
         <div>
+          <!-- Encabezado de la App -->
           <div class="flex justify-between items-start mb-6">
             <div>
               <span
@@ -112,6 +119,7 @@
                 Capture la información física del sujeto.
               </p>
             </div>
+            <!-- Botón de ajustes de conexión -->
             <button
               onclick="openSettings()"
               class="text-slate-500 hover:text-white p-2 rounded-xl hover:bg-slate-800 transition-all"
@@ -120,13 +128,16 @@
             </button>
           </div>
 
+          <!-- FORMULARIO -->
           <div class="space-y-4">
+            <!-- CAPTURA MULTI-FOTO (HASTA 5 FOTOS) -->
             <div class="flex flex-col items-start py-1">
               <label
                 class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2"
                 >Fotografías del Sujeto (Hasta 5)</label
               >
               <div class="grid grid-cols-5 gap-2 w-full">
+                <!-- SLOT 0 -->
                 <div
                   onclick="triggerPhotoSlot(0)"
                   id="slot-0"
@@ -152,6 +163,7 @@
                   </button>
                 </div>
 
+                <!-- SLOT 1 -->
                 <div
                   onclick="triggerPhotoSlot(1)"
                   id="slot-1"
@@ -177,6 +189,7 @@
                   </button>
                 </div>
 
+                <!-- SLOT 2 -->
                 <div
                   onclick="triggerPhotoSlot(2)"
                   id="slot-2"
@@ -202,6 +215,7 @@
                   </button>
                 </div>
 
+                <!-- SLOT 3 -->
                 <div
                   onclick="triggerPhotoSlot(3)"
                   id="slot-3"
@@ -227,6 +241,7 @@
                   </button>
                 </div>
 
+                <!-- SLOT 4 -->
                 <div
                   onclick="triggerPhotoSlot(4)"
                   id="slot-4"
@@ -253,6 +268,7 @@
                 </div>
               </div>
 
+              <!-- Inputs nativos de cámara -->
               <input
                 type="file"
                 id="input-file-0"
@@ -285,16 +301,18 @@
                 class="hidden"
                 onchange="handlePhotoSlotChange(3)"
               />
+              <!-- CORREGIDO: Llama de forma correcta a handlePhotoSlotChange(4) -->
               <input
                 type="file"
                 id="input-file-4"
                 accept="image/*"
                 capture="environment"
                 class="hidden"
-                onchange="changePhotoSlot(4)"
+                onchange="handlePhotoSlotChange(4)"
               />
             </div>
 
+            <!-- DATOS DE TEXTO -->
             <div class="space-y-3">
               <div>
                 <label
@@ -369,6 +387,7 @@
           </div>
         </div>
 
+        <!-- Botón de Envío -->
         <button
           onclick="checkFormBeforeSubmit()"
           class="w-full bg-sky-500 hover:bg-sky-400 active:scale-95 text-slate-950 text-sm py-4 rounded-2xl font-bold mt-6 shadow-lg shadow-sky-500/15 flex items-center justify-center gap-2 transition-all"
@@ -377,6 +396,7 @@
         </button>
       </div>
 
+      <!-- MODAL DE ADVERTENCIA PARA CAMPOS VACÍOS -->
       <div
         id="modal-warning-confirm"
         class="hidden absolute inset-0 bg-slate-950/95 z-50 p-6 flex flex-col justify-center items-center text-center"
@@ -417,6 +437,7 @@
         </div>
       </div>
 
+      <!-- MODAL DE ÉXITO POST-ENVÍO -->
       <div
         id="modal-success"
         class="hidden absolute inset-0 bg-slate-950/90 z-45 p-6 flex flex-col justify-center items-center text-center"
@@ -448,6 +469,7 @@
         </div>
       </div>
 
+      <!-- PANTALLA 2: COLA DE ESPERA MULTI-SUJETO -->
       <div
         id="screen-queue"
         class="hidden flex-grow flex flex-col overflow-y-auto no-scrollbar p-6 justify-between"
@@ -504,6 +526,7 @@
         </button>
       </div>
 
+      <!-- PANTALLA 3: PANTALLA DE ESTADO DE VALIDACIÓN (MONITOR EN VIVO) -->
       <div
         id="screen-status"
         class="hidden flex-grow flex flex-col p-6 justify-between text-center transition-colors duration-500"
@@ -596,6 +619,7 @@
         </div>
       </div>
 
+      <!-- MODAL DE AJUSTES -->
       <div
         id="settings-modal"
         class="hidden absolute inset-0 bg-slate-950/95 z-40 p-6 flex flex-col justify-between"
@@ -649,6 +673,7 @@
       </div>
     </div>
 
+    <!-- SCRIPT DE LÓGICA COMPLETA CON COMPRESIÓN DE IMÁGENES INTEGRADA -->
     <script>
       let photosArray = [null, null, null, null, null];
       let webhookUrl = localStorage.getItem("pa_webhook_url") || "";
@@ -662,7 +687,7 @@
       updateBadge();
       renderQueue();
 
-      // --- SISTEMA MULTI-FOTOS ---
+      // --- SISTEMA MULTI-FOTOS CON COMPRESIÓN WEB AL INSTANTE ---
       function triggerPhotoSlot(index) {
         document.getElementById(`input-file-${index}`).click();
       }
@@ -671,18 +696,53 @@
         const input = document.getElementById(`input-file-${index}`);
         const file = input.files[0];
         if (file) {
+          showToast(
+            "Procesando",
+            "Comprimiendo fotografía para envío rápido...",
+            false,
+          );
+
           const reader = new FileReader();
           reader.onload = function (event) {
-            photosArray[index] = event.target.result;
+            const img = new Image();
+            img.src = event.target.result;
+            img.onload = function () {
+              const canvas = document.createElement("canvas");
+              let width = img.width;
+              let height = img.height;
 
-            const preview = document.getElementById(`slot-preview-${index}`);
-            const emptyState = document.getElementById(`slot-empty-${index}`);
-            const removeBtn = document.getElementById(`slot-remove-${index}`);
+              const max_size = 800;
+              if (width > height) {
+                if (width > max_size) {
+                  height *= max_size / width;
+                  width = max_size;
+                }
+              } else {
+                if (height > max_size) {
+                  width *= max_size / height;
+                  height = max_size;
+                }
+              }
 
-            preview.src = event.target.result;
-            preview.classList.remove("hidden");
-            emptyState.classList.add("hidden");
-            removeBtn.classList.remove("hidden");
+              canvas.width = width;
+              canvas.height = height;
+              const ctx = canvas.getContext("2d");
+              ctx.drawImage(img, 0, 0, width, height);
+
+              const compressedBase64 = canvas.toDataURL("image/jpeg", 0.7);
+              photosArray[index] = compressedBase64;
+
+              const preview = document.getElementById(`slot-preview-${index}`);
+              const emptyState = document.getElementById(`slot-empty-${index}`);
+              const removeBtn = document.getElementById(`slot-remove-${index}`);
+
+              preview.src = compressedBase64;
+              preview.classList.remove("hidden");
+              emptyState.classList.add("hidden");
+              removeBtn.classList.remove("hidden");
+
+              showToast("Foto Lista", "Imagen optimizada con éxito.", false);
+            };
           };
           reader.readAsDataURL(file);
         }
@@ -760,14 +820,14 @@
         toast.classList.remove("-translate-y-24", "opacity-0");
         setTimeout(() => {
           toast.classList.add("-translate-y-24", "opacity-0");
-        }, 3500);
+        }, 4000);
       }
 
-      // --- GESTIÓN DE ENVÍO ---
+      // --- GESTIÓN DE ENVÍO CON NUEVO FORMATO DE FECHA (ISO 8601) ---
       function checkFormBeforeSubmit() {
         const name = document.getElementById("input-name").value.trim();
         const docId = document.getElementById("input-id").value.trim();
-        const dob = document.getElementById("input-dob").value;
+        const dob = document.getElementById("input-dob").value; // Formato nativo "YYYY-MM-DD"
         const nationality = document
           .getElementById("input-nationality")
           .value.trim();
@@ -782,22 +842,21 @@
 
         const recordId = "REC_" + Date.now();
         const now = new Date();
-        const localTimestamp = now.toLocaleString("es-ES", {
-          dateStyle: "short",
-          timeStyle: "medium",
-        });
+
+        // OPTIMIZACIÓN: Mandar las fechas en formato nativo estandarizado de tipo Fecha (ISO 8601)
+        const isoTimestamp = now.toISOString(); // "YYYY-MM-DDTHH:mm:ss.sssZ" para Base de datos
 
         pendingPayloadData = {
           RecordId: recordId,
           Nombre: name || "Sin especificar",
           Documento: docId || "S/D",
-          FechaNacimiento: dob || "No digitada",
+          FechaNacimiento: dob ? dob : null, // Enviamos null si está vacío para evitar errores de tipo en DB
           Nacionalidad: nationality || "Desconocida",
           Fotos:
             activePhotos.length > 0
               ? activePhotos
               : ["https://placehold.co/150x150/0f172a/334155?text=Sin+Foto"],
-          FechaCreacion: localTimestamp,
+          FechaCreacion: isoTimestamp, // Sincronizado como tipo Fecha real para SharePoint / Access
           Estado: "Pendiente",
           Comentario: "",
         };
@@ -866,8 +925,8 @@
               );
             } else {
               showToast(
-                "Error de Envío",
-                "El servidor Webhook rechazó los datos.",
+                "Fallo de Servidor",
+                `Código HTTP ${response.status}: El flujo rechazó el envío. Verifique el esquema de tipos en Power Automate.`,
               );
             }
           })
@@ -888,7 +947,7 @@
         goToScreen("screen-capture");
       }
 
-      // --- RENDERIZAR COLA ---
+      // --- RENDERIZAR COLA MÓVIL ---
       function renderQueue() {
         const container = document.getElementById("queue-list-container");
         const emptyState = document.getElementById("queue-empty-state");
@@ -935,6 +994,20 @@
               ? subject.Fotos[0]
               : "https://placehold.co/150x150/0f172a/334155?text=Sin+Foto";
 
+          // Formatear fecha para mostrar localmente de manera estética
+          let friendlyDate = "Hace un momento";
+          if (subject.FechaCreacion) {
+            try {
+              const d = new Date(subject.FechaCreacion);
+              if (!isNaN(d.getTime())) {
+                friendlyDate = d.toLocaleString("es-ES", {
+                  dateStyle: "short",
+                  timeStyle: "medium",
+                });
+              }
+            } catch (e) {}
+          }
+
           card.innerHTML = `
                     <div class="flex items-center gap-3 min-w-0 flex-grow">
                         <div class="w-12 h-12 rounded-xl overflow-hidden bg-slate-700/50 border border-slate-600/50 flex-shrink-0 relative">
@@ -944,7 +1017,7 @@
                         <div class="min-w-0 text-left">
                             <p class="font-bold text-white text-xs truncate">${subject.Nombre}</p>
                             <p class="text-[10px] text-slate-400 mt-0.5 truncate">ID: ${subject.Documento} • ${subject.Nacionalidad}</p>
-                            <p class="text-[9px] text-slate-500 font-mono mt-1"><i class="fa-regular fa-clock mr-1"></i>${subject.FechaCreacion}</p>
+                            <p class="text-[9px] text-slate-500 font-mono mt-1"><i class="fa-regular fa-clock mr-1"></i>${friendlyDate}</p>
                         </div>
                     </div>
                     <div class="flex-shrink-0">
@@ -958,6 +1031,7 @@
         });
       }
 
+      // --- VER DETALLES EN PANTALLA ---
       function openSubjectDetail(recordId) {
         currentRecordId = recordId;
         let subject = subjectsQueue.find((s) => s.RecordId === recordId);
@@ -987,10 +1061,42 @@
         document.getElementById("summary-id").innerText = subject.Documento;
         document.getElementById("summary-nationality").innerText =
           subject.Nacionalidad;
-        document.getElementById("summary-dob").innerText =
-          subject.FechaNacimiento;
+
+        // Formatear Fecha de Nacimiento para UI local
+        let dobDisplay = "No digitada";
+        if (subject.FechaNacimiento) {
+          try {
+            const parts = subject.FechaNacimiento.split("-");
+            if (parts.length === 3) {
+              dobDisplay = `${parts[2]}/${parts[1]}/${parts[0]}`; // DD/MM/YYYY
+            } else {
+              dobDisplay = subject.FechaNacimiento;
+            }
+          } catch (e) {
+            dobDisplay = subject.FechaNacimiento;
+          }
+        }
+        document.getElementById("summary-dob").innerText = dobDisplay;
+
+        // Formatear Fecha de Registro para UI local
+        let timestampDisplay = "-";
+        if (subject.FechaCreacion) {
+          try {
+            const d = new Date(subject.FechaCreacion);
+            if (!isNaN(d.getTime())) {
+              timestampDisplay = d.toLocaleString("es-ES", {
+                dateStyle: "short",
+                timeStyle: "medium",
+              });
+            } else {
+              timestampDisplay = subject.FechaCreacion;
+            }
+          } catch (e) {
+            timestampDisplay = subject.FechaCreacion;
+          }
+        }
         document.getElementById("summary-timestamp").innerText =
-          subject.FechaCreacion;
+          timestampDisplay;
 
         updateStatusVisuals(subject.Estado, subject.Comentario);
         goToScreen("screen-status");
