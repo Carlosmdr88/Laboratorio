@@ -571,7 +571,9 @@
 
     <script>
       let photosArray = [null, null, null, null, null];
-      let webhookUrl = localStorage.getItem("pa_webhook_url") || "";
+      //let webhookUrl = localStorage.getItem("pa_webhook_url") || "";
+      const webhookUrl =
+        "https://default6cf2221cc6bd484781777f57b05330.6b.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/758af806a6fc432aae55cddad7947437/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=EOAZbzDEi-JEdRYBZegenftRJliSSjqk60c8-_3Wl78";
       let currentRecordId = null;
       let pendingPayloadData = null;
       let pollingInterval = null;
