@@ -151,18 +151,21 @@
                   type="file"
                   id="input-file-0"
                   accept="image/*"
+                  capture="environment"
                   onchange="handlePhotoSlotChange(0)"
                 />
                 <input
                   type="file"
                   id="input-file-1"
                   accept="image/*"
+                  capture="environment"
                   onchange="handlePhotoSlotChange(1)"
                 />
                 <input
                   type="file"
                   id="input-file-2"
                   accept="image/*"
+                  capture="environment"
                   onchange="handlePhotoSlotChange(2)"
                 />
                 <input
@@ -175,7 +178,6 @@
                   type="file"
                   id="input-file-4"
                   accept="image/*"
-                  capture="environment"
                   onchange="handlePhotoSlotChange(4)"
                 />
               </div>
@@ -1009,18 +1011,16 @@
           iconContainer.className =
             "w-24 h-24 rounded-full bg-emerald-50 mx-auto flex items-center justify-center text-4xl shadow-lg border-2 border-emerald-400 animate-bounce";
           icon.className = "fa-solid fa-circle-check text-slate-950";
-          title.innerText = "¡PASE AUTORIZADO!";
-          message.innerText =
-            comment ||
-            "Paso permitido. Los datos personales y fotografía se validaron con éxito.";
+          title.innerText = "¡SIN EXPEDIENTE!";
+          message.innerText = comment || "LA PERSONA NO PRESENTA EXPEDIENTE.";
           waitIndicator.classList.add("hidden");
         } else if (status === "Rechazado") {
           screen.classList.add("bg-red-950/95");
           iconContainer.className =
             "w-24 h-24 rounded-full bg-red-600 mx-auto flex items-center justify-center text-4xl shadow-lg border-2 border-red-400";
           icon.className = "fa-solid fa-circle-xmark text-white";
-          title.innerText = "ACCESO DENEGADO";
-          message.innerText = `Atención: Acceso no autorizado. Motivo: "${comment || "Fallo en la validación de credenciales."}"`;
+          title.innerText = "CON PENDIENTES";
+          message.innerText = `Atención: Persona con pendientes. Motivo: "${comment || "Fallo en la validación de credenciales."}"`;
           waitIndicator.classList.add("hidden");
         } else if (status === "Volver a confirmar") {
           screen.classList.add("bg-amber-950/95");
@@ -1088,7 +1088,7 @@
               }
             })
             .catch((err) => console.log("Esperando actualización central..."));
-        }, 5000); // Consulta cada 5 segundos
+        }, 1000); // Consulta cada 1 segundo
       }
 
       function stopPolling() {
